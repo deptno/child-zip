@@ -8,14 +8,19 @@ const list = JSON.parse(process.argv[3]);
 const zip = new nodeZip();
 
 Promise
-    .all(list.map(async ({link}) => {
+    .all(list.map(async uri => {
         try {
-            const response = await fetch(encodeURI(link));
+            const response = await fetch(encodeURI(uri));
             const buffer = await (response as any).buffer();
-            zip.file(basename(link), buffer);
+            zip.file(basename(uri), buffer);
         } catch (ex) {
-            console.error(`fetch error: ${link}`, ex);
+            console.error(`fetch error: ${uri}`, ex);
         }
     }))
-    .then(_ => writeFileSync(join(__dirname, filename), zip.generate(), 'binary'))
-    .catch(console.error);
+    .then(_ => {
+        try {
+            writeFileSync(join(__dirname, filename), zip.generate(), 'binary');
+        } catch(ex) {
+            console.error(ex);
+        }
+    });

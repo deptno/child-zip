@@ -1,9 +1,9 @@
 {
-  "name": "child-zip",
+  "name": "zip-remote-resources",
   "version": "0.1.0",
   "description": "process: file list -> compressed.zip",
   "main": "index.js",
-  "repository": "https://github.com/deptno/child-zip.git",
+  "repository": "https://github.com/deptno/zip-remote-resources.git",
   "author": "bglee <deptno@gmail.com>",
   "license": "MIT",
   "dependencies": {
