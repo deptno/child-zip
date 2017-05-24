@@ -1,5 +1,14 @@
-# child-zip
+# zip-remote-resources
 
-```
-spawn('node', [THIS_FILE, 'compressed.zip', JSON.stringify(list)], {stdio: [0,1,2]});
+```javascript
+const bytes = await new Promise(resolve => {
+    const child = spawn('node', [
+            `${__dirname}/../../node_modules/zip-remote-resources/index.js`,
+            filename,
+            JSON.stringify(['...IMAGE_URL.jpg'])
+        ],
+        {stdio: [0,'pipe',process.stderr]}
+    );
+    child.stdout.on('data', x => resolve(parseInt(x.toString())));
+});
 ```
