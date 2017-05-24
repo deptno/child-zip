@@ -1,0 +1,18 @@
+{
+  "name": "child-zip",
+  "version": "0.1.0",
+  "description": "process: file list -> compressed.zip",
+  "main": "index.js",
+  "repository": "https://github.com/deptno/child-zip.git",
+  "author": "bglee <deptno@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/isomorphic-fetch": "^0.0.34",
+    "@types/node": "^7.0.22",
+    "isomorphic-fetch": "^2.2.1",
+    "node-zip": "^1.1.1"
+  },
+  "scripts": {
+    "prepublish": "tsc"
+  }
+}
