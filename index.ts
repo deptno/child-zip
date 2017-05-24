@@ -21,6 +21,7 @@ Promise
         try {
             const buffer = zip.generate({base64: false, compression: 'DEFLATE'});
             writeFileSync(filename, buffer, 'binary');
+            console.log(buffer.length);
         } catch(ex) {
             console.error(ex);
         }
