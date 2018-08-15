@@ -1,4 +1,6 @@
 # zip-remote-resources
+[![npm](https://img.shields.io/npm/dt/zip-remote-resources.svg?style=for-the-badge)](https://www.npmjs.com/package/zip-remote-resources)
+> 💔 THIS PROJECT IS NO LONGER MAINTAINED
 
 ```javascript
 const bytes = await new Promise(resolve => {
@@ -12,3 +14,6 @@ const bytes = await new Promise(resolve => {
     child.stdout.on('data', x => resolve(parseInt(x.toString())));
 });
 ```
+
+## related
+- https://github.com/deptno/class-zangsisi
